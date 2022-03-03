@@ -12,7 +12,6 @@
     <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginBottom="16dp"
         app:cardBackgroundColor="#AAAFD6FF"
         app:cardCornerRadius="4dp"
         app:cardElevation="0dp"
@@ -30,7 +29,8 @@
                 android:id="@+id/message"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="No logged data (yet!)" />
+                android:text="No logged data (yet!)"
+                android:textIsSelectable="true"/>
         </ScrollView>
 
     </com.google.android.material.card.MaterialCardView>
@@ -43,16 +43,27 @@
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+        android:clipChildren="false"
+        android:clipToPadding="false"
+        android:paddingVertical="8dp">
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/record_button"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:layout_gravity="center|center_horizontal"
-            android:backgroundTint="@color/white"
-            android:gravity="center|center_horizontal"
-            app:icon="@drawable/ic_play_arrow_24" />
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:insetBottom="0dp"
+            android:insetTop="0dp"
+            android:insetLeft="0dp"
+            android:insetRight="0dp"
+            app:backgroundTint="@color/white"
+            app:iconTint="@color/light_blue_500"
+            app:icon="@drawable/ic_play_arrow_24"
+            app:iconGravity="textEnd"
+            app:iconPadding="0dp"
+            app:cornerRadius="32dp"
+            app:strokeColor="@color/light_blue_500"
+            app:strokeWidth="2dp"/>
     </LinearLayout>
 
 
