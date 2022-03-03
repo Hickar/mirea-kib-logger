@@ -1,7 +1,7 @@
 package com.hickar.kib_logger
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import com.hickar.kib_logger.ui.main.LoggerRecorderFragment
 
 class MainActivity : AppCompatActivity() {
