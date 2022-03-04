@@ -69,12 +69,12 @@ class LoggerRecorderFragment : Fragment() {
                 requireActivity().activityResultRegistry.register("gyro", ActivityResultContracts.CreateDocument()) { uri ->
                     if (uri == null) return@register
                     viewModel.save(uri, LoggerRecorderViewModel.GYRO_KEY)
-                }.launch("application/csv")
+                }.launch("gyro.csv")
 
                 requireActivity().activityResultRegistry.register("acc", ActivityResultContracts.CreateDocument()) { uri ->
                     if (uri == null) return@register
                     viewModel.save(uri, LoggerRecorderViewModel.ACC_KEY)
-                }.launch("application/csv")
+                }.launch("acc.csv")
             }
         }
     }
@@ -100,20 +100,6 @@ class LoggerRecorderFragment : Fragment() {
         recordButton.strokeColor = AppCompatResources.getColorStateList(context, buttonColor)
         recordButton.iconTint = AppCompatResources.getColorStateList(context, buttonColor)
     }
-
-//    override fun onActivityResult(requestCode: Int, resultCode: Int, intent: Intent?) {
-//        val uri = intent?.data
-//    }
-//
-//    private fun saveFile() {
-//        val CREATE_FILE_CODE = 1
-//        val intent = Intent(Intent.ACTION_CREATE_DOCUMENT).apply {
-//            type = "document"
-//            putExtra(Intent.EXTRA_TITLE, "gyro.csv")
-//        }
-//
-//        startActivityForResult(intent, CREATE_FILE_CODE)
-//    }
 
     private val gyroscopeEventListener = object : SensorEventListener {
         override fun onSensorChanged(event: SensorEvent?) {

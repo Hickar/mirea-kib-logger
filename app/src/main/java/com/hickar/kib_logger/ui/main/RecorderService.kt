@@ -10,7 +10,8 @@ class RecorderService(
     private val csvMapper = CsvMapper()
 
     fun saveToDisk(uri: Uri, payload: List<SensorRecord>) {
-        val csvWriter = csvMapper.writerWithTypedSchemaFor(SensorRecord::class.java)
+        val schema = csvMapper.typedSchemaFor(SensorRecord::class.java).withHeader()
+        val csvWriter = csvMapper.writer(schema)
         val file = applicationContext.contentResolver.openOutputStream(uri)
 
         val fileWriter = csvWriter.writeValues(file)
