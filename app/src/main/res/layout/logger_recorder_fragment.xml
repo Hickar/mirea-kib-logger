@@ -23,14 +23,16 @@
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="8dp">
+            android:padding="8dp"
+            android:overScrollMode="never">
 
             <TextView
-                android:id="@+id/message"
+                android:id="@+id/record_logs"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="No logged data (yet!)"
-                android:textIsSelectable="true"/>
+                android:textIsSelectable="true"
+                android:overScrollMode="never"/>
         </ScrollView>
 
     </com.google.android.material.card.MaterialCardView>
